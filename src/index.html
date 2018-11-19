@@ -7,7 +7,35 @@
   </head>
   <body>
     <div id="root">
-      <h1>Hola Mundo</h1>
+      <div id="bienvenida">
+      	<p>Creación de claves bancarias Inteligentes</p>
+		<p>"Fuertes y seguras con datos fáciles de recordar"</p>
+      </div>
+      <div id="funcionalidad">
+      	<form>
+      		<label>Desplazamiento:</label>
+      		<select id="desplazamiento">
+      			<option>1</option>
+      			<option>2</option>
+      			<option>3</option>
+      			<option>4</option>
+      			<option>5</option>
+      			<option>6</option>
+      			<option>7</option>
+      			<option>8</option>
+      			<option>9</option>
+      			<option>10</option>
+      		</select>
+      		<label>Ingrese clave a cifrar o descifrar:</label>
+      		<textarea id="frase"></textarea>
+      		<input type="button" id="cifrar" value="Cifrar">
+      		<input type="button" id="descifrar" value="Descifrar">
+
+      	</form>
+      </div>
+      <div id="resultado">
+      	
+      </div>
     </div>
     <script src="cipher.js"></script>
     <script src="index.js"></script>
