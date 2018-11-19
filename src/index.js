@@ -9,9 +9,9 @@
 	//alert(`Frase mayuscula: ${fraseMayuscula}`);
 
 	//saber el desplazamiento
-	const desplazamiento=parseInt(document.getElementById('desplazamiento').value);
+	//const desplazamiento=parseInt(document.getElementById('desplazamiento').value);
 	//alert(`desplazamiento: ${desplazamiento}`);
-	resultado.innerHTML = cifrarFrase(fraseInicial, desplazamiento);
+	resultado.innerHTML = cifrarFrase(fraseInicial);
   });
 
   const btnDescifrar = document.getElementById('btn-descifrar');
@@ -27,7 +27,7 @@
 	//saber el desplazamiento
 	const desplazamiento=parseInt(document.getElementById('desplazamiento').value);
 	//alert(`desplazamiento: ${desplazamiento}`);
-	resultado.innerHTML = descifrarFrase(fraseInicial, desplazamiento);
+	resultado.innerHTML = descifrarFrase(fraseInicial);
   }); 
 
 //funcion para cifrar
@@ -37,8 +37,16 @@
 		for (let i=0; i< fraseMayuscula.length; i++) {
 			let fraseANCIIDesplazado="";
 			const fraseANCII=fraseMayuscula.charCodeAt(i);//transforma en ANCII
+			console.log(fraseANCII);
 			if(fraseANCII[i]!=32){
-				fraseANCIIDesplazado=((((fraseANCII-65)+desplazamiento)%26)+65);
+				console.log("no es espacio");
+				if(fraseANCII[i]>64){
+					console.log("esta en mayuscula");
+					if(fraseANCII[i]<91){
+						console.log("esta en mayuscula 2");
+						fraseANCIIDesplazado=fraseANCII-65+desplazamiento%26+65;
+					}
+				}
 			}
 			fraseCifrada.push(String.fromCharCode(fraseANCIIDesplazado)); 
 		}
@@ -51,9 +59,7 @@ const descifrarFrase= (fraseMayuscula,desplazamiento)=>{
 	for (let i=0; i< fraseMayuscula.length; i++) {
 		let fraseANCIIDesplazado="";
 		const fraseANCII=fraseMayuscula.charCodeAt(i);//transforma en ANCII
-		if(fraseANCII[i]!=32){
-			fraseANCIIDesplazado=((((fraseANCII-65)-desplazamiento)%26)+65);
-		}
+		if(fraseANCII[i]!=32 && fraseANCII[i]>=65 && fraseANCII[i]<=90)fraseANCIIDesplazado=fraseANCII-65+desplazamiento%26+65;
 		fraseDescifrada.push(String.fromCharCode(fraseANCIIDesplazado)); 
 	}
 	return fraseDescifrada.join("");
