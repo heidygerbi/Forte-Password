@@ -13,28 +13,22 @@
       </div>
       <div id="funcionalidad">
       	<form>
-      		<label>Desplazamiento:</label>
-      		<select id="desplazamiento">
-      			<option>1</option>
-      			<option>2</option>
-      			<option>3</option>
-      			<option>4</option>
-      			<option>5</option>
-      			<option>6</option>
-      			<option>7</option>
-      			<option>8</option>
-      			<option>9</option>
-      			<option>10</option>
-      		</select>
-      		<label>Ingrese clave a cifrar o descifrar:</label>
-      		<textarea id="frase"></textarea>
-      		<input type="button" id="cifrar" value="Cifrar">
-      		<input type="button" id="descifrar" value="Descifrar">
-
+					<div>
+						<label>Desplazamiento:</label>
+						<input type="number" id="desplazamiento">
+					</div>
+					<div>
+						<label>Ingrese clave a cifrar o descifrar:</label>
+						<textarea id="frase"></textarea>
+					</div>
+					<div>
+						<input type="button" id="cifrar" value="Cifrar">
+						<input type="button" id="descifrar" value="Descifrar">
+					</div>
       	</form>
       </div>
-      <div id="resultado">
-      	
+      <div id="resul">
+				<textarea id="resultado"></textarea>
       </div>
     </div>
     <script src="cipher.js"></script>
