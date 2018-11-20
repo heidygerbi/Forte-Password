@@ -1,66 +1,56 @@
- const btnCifrar = document.getElementById('btn-cifrar');
+const btnCifrar = document.getElementById('btn-cifrar');
  btnCifrar.addEventListener('click', () => {
-	 	//saber la frase
 	const fraseInicial= document.getElementById('frase').value;
-	//alert(`Frase inicial: ${fraseInicial}`);
-
-	//CONVERTIR FRASE EN MAYUSCULA
-	const fraseMayuscula=fraseInicial.toUpperCase();
-	//alert(`Frase mayuscula: ${fraseMayuscula}`);
-
-	//saber el desplazamiento
-	//const desplazamiento=parseInt(document.getElementById('desplazamiento').value);
-	//alert(`desplazamiento: ${desplazamiento}`);
-	resultado.innerHTML = cifrarFrase(fraseInicial);
+	const desplazamiento=parseInt(document.getElementById('desplazamiento').value);
+	resultado.innerHTML = cifrarFrase(fraseInicial,desplazamiento);
   });
 
   const btnDescifrar = document.getElementById('btn-descifrar');
  btnDescifrar.addEventListener('click', () => {
-	 	//saber la frase
 	const fraseInicial= document.getElementById('frase').value;
-	//alert(`Frase inicial: ${fraseInicial}`);
-
-	//CONVERTIR FRASE EN MAYUSCULA
-	const fraseMayuscula=fraseInicial.toUpperCase();
-	//alert(`Frase mayuscula: ${fraseMayuscula}`);
-
-	//saber el desplazamiento
 	const desplazamiento=parseInt(document.getElementById('desplazamiento').value);
-	//alert(`desplazamiento: ${desplazamiento}`);
-	resultado.innerHTML = descifrarFrase(fraseInicial);
+	resultado.innerHTML = descifrarFrase(fraseInicial,desplazamiento);
   }); 
 
 //funcion para cifrar
-	const cifrarFrase= (fraseMayuscula,desplazamiento)=>{
-		const fraseCifrada=[];
+	const cifrarFrase= (fraseInicial,desplazamiento)=>{
+		const fraseMayuscula=fraseInicial.toUpperCase();
+		let fraseANCIIDesplazado=[];
+		let fraseANCII=[];
+		let fraseCifrada="";
 		//recorrer letra por letra 
-		for (let i=0; i< fraseMayuscula.length; i++) {
-			let fraseANCIIDesplazado="";
-			const fraseANCII=fraseMayuscula.charCodeAt(i);//transforma en ANCII
-			console.log(fraseANCII);
-			if(fraseANCII[i]!=32){
-				console.log("no es espacio");
-				if(fraseANCII[i]>64){
-					console.log("esta en mayuscula");
-					if(fraseANCII[i]<91){
-						console.log("esta en mayuscula 2");
-						fraseANCIIDesplazado=fraseANCII-65+desplazamiento%26+65;
-					}
-				}
-			}
-			fraseCifrada.push(String.fromCharCode(fraseANCIIDesplazado)); 
+		for (let i=0; i<fraseMayuscula.length; i++) {
+			fraseANCII[i]=parseInt(fraseMayuscula.charCodeAt(i));//transforma en ANCII
+			if(fraseANCII[i]!==32 && fraseANCII[i]>=65 && fraseANCII[i]<=90)fraseANCIIDesplazado[i]=(((fraseANCII[i]-65)+desplazamiento)%26)+65;
+			fraseCifrada+=String.fromCharCode(fraseANCIIDesplazado[i]); 
 		}
-		return fraseCifrada.join("");
+		//console.log(fraseCifrada);
+		return fraseCifrada;
 	}
 //funcion para descifrar
-const descifrarFrase= (fraseMayuscula,desplazamiento)=>{
-	const fraseDescifrada=[];
+const descifrarFrase= (fraseInicial,desplazamiento)=>{
+	const fraseMayuscula=fraseInicial.toUpperCase();
+	let fraseANCIIDesplazado=[];
+	let fraseANCII=[];
+	let fraseDescifrada="";
 	//recorrer letra por letra 
-	for (let i=0; i< fraseMayuscula.length; i++) {
-		let fraseANCIIDesplazado="";
-		const fraseANCII=fraseMayuscula.charCodeAt(i);//transforma en ANCII
-		if(fraseANCII[i]!=32 && fraseANCII[i]>=65 && fraseANCII[i]<=90)fraseANCIIDesplazado=fraseANCII-65+desplazamiento%26+65;
-		fraseDescifrada.push(String.fromCharCode(fraseANCIIDesplazado)); 
+	for (let i=0; i<fraseMayuscula.length; i++) {
+		fraseANCII[i]=parseInt(fraseMayuscula.charCodeAt(i));//transforma en ANCII
+		/*if(fraseANCII[i]!==32 && fraseANCII[i]>=65 && fraseANCII[i]<=90){
+			let a=(fraseANCII[i]-65);
+			console.log(a);
+			let b=(a-desplazamiento);
+			console.log(b);
+			let c=(b%26);
+			console.log(c);
+			let d=c+65;
+			console.log(d);
+			fraseANCIIDesplazado[i]=d;
+		}*/
+		if(fraseANCII[i]!==32 && fraseANCII[i]>=65 && fraseANCII[i]<=90)fraseANCIIDesplazado[i]=(((fraseANCII[i]-65)+desplazamiento)%26)+65;
+		fraseDescifrada+=String.fromCharCode(fraseANCIIDesplazado[i]); 
+
 	}
-	return fraseDescifrada.join("");
+	//console.log(fraseDescifrada);
+	return fraseDescifrada;
 }
