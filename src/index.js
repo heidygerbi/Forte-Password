@@ -20,7 +20,10 @@ const btnCifrar = document.getElementById('btn-cifrar');
 		let fraseCifrada="";
 		for (let i=0; i<fraseMayuscula.length; i++) {
 			fraseANCII[i]=parseInt(fraseMayuscula.charCodeAt(i));//transforma en ANCII
-			if(fraseANCII[i]!==32 && fraseANCII[i]>=65 && fraseANCII[i]<=90)fraseANCIIDesplazado[i]=(((fraseANCII[i]-65)+desplazamiento)%26)+65;
+			if((fraseANCII[i]>=65 && fraseANCII[i]<=90)||fraseANCII[i]===32){
+				if(fraseANCII[i]!==32)fraseANCIIDesplazado[i]=(((fraseANCII[i]-65)+desplazamiento)%26)+65;
+				else if(fraseANCII[i]===32)fraseANCIIDesplazado[i]=fraseANCII[i];
+			}
 			fraseCifrada+=String.fromCharCode(fraseANCIIDesplazado[i]); 
 		}
 		return fraseCifrada;
@@ -33,8 +36,9 @@ const descifrarFrase= (fraseInicial,desplazamiento)=>{
 	let fraseDescifrada="";
 	for (let i=0; i<fraseMayuscula.length; i++) {
 		fraseANCII[i]=parseInt(fraseMayuscula.charCodeAt(i));//transforma en ANCII
- 		if(fraseANCII[i]!==32 && fraseANCII[i]>=65 && fraseANCII[i]<=90){
-			fraseANCIIDesplazado[i]=(((fraseANCII[i]-90)-desplazamiento)%26)+90;
+ 		if((fraseANCII[i]>=65 && fraseANCII[i]<=90)||fraseANCII[i]===32){
+			 if(fraseANCII[i]!==32)fraseANCIIDesplazado[i]=(((fraseANCII[i]-90)-desplazamiento)%26)+90;
+			 else if(fraseANCII[i]===32)fraseANCIIDesplazado[i]=fraseANCII[i];
 		}
 		fraseDescifrada+=String.fromCharCode(fraseANCIIDesplazado[i]); 
 
