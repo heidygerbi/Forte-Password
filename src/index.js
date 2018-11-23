@@ -6,7 +6,7 @@ const btnCifrar = document.getElementById('btn-cifrar');
 	const offset=parseInt(document.getElementById('desplazamiento').value);
 	//alert(cifrarFrase(string,offset));
 //	resultado.innerHTML = cipher.encode(offset,string);
-	frase.innerHTML = cifrarFrase(string,offset);
+	resultado.innerHTML = cifrarFrase(string,offset);
 });
 
  const btnDescifrar = document.getElementById('btn-descifrar');
@@ -14,7 +14,7 @@ const btnCifrar = document.getElementById('btn-cifrar');
 	const string= document.getElementById('frase').value;
 	const offset=parseInt(document.getElementById('desplazamiento').value);
 //	resultado.innerHTML = cipher.decode(offset,string);
-	frase.innerHTML=descifrarFrase(string,offset);
+	resultado.innerHTML=descifrarFrase(string,offset);
 }); 
 
 //funcion para cifrar
