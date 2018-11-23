@@ -1,20 +1,24 @@
-import cipher.js;
+//import window.cipher from 'cipher.js';
+//import window.cipher from 'cipher.js';
 const btnCifrar = document.getElementById('btn-cifrar');
  btnCifrar.addEventListener('click', () => {
-	const fraseInicial= document.getElementById('frase').value;
-	const desplazamiento=parseInt(document.getElementById('desplazamiento').value);
-	resultado.innerHTML = cipher.value
-  });
+	const string= document.getElementById('frase').value;
+	const offset=parseInt(document.getElementById('desplazamiento').value);
+	//alert(cifrarFrase(string,offset));
+//	resultado.innerHTML = cipher.encode(offset,string);
+	frase.innerHTML = cifrarFrase(string,offset);
+});
 
-  const btnDescifrar = document.getElementById('btn-descifrar');
+ const btnDescifrar = document.getElementById('btn-descifrar');
  btnDescifrar.addEventListener('click', () => {
-	const fraseInicial= document.getElementById('frase').value;
-	const desplazamiento=parseInt(document.getElementById('desplazamiento').value);
-	resultado.innerHTML = descifrarFrase(fraseInicial,desplazamiento);
-  }); 
+	const string= document.getElementById('frase').value;
+	const offset=parseInt(document.getElementById('desplazamiento').value);
+//	resultado.innerHTML = cipher.decode(offset,string);
+	frase.innerHTML=descifrarFrase(string,offset);
+}); 
 
 //funcion para cifrar
-/*	const cifrarFrase= (fraseInicial,desplazamiento)=>{
+	const cifrarFrase= (fraseInicial,desplazamiento)=>{
 		const fraseMayuscula=fraseInicial.toUpperCase();
 		let fraseANCIIDesplazado=[];
 		let fraseANCII=[];
@@ -28,9 +32,9 @@ const btnCifrar = document.getElementById('btn-cifrar');
 			fraseCifrada+=String.fromCharCode(fraseANCIIDesplazado[i]); 
 		}
 		return fraseCifrada;
-	}*/
+	}
 //funcion para descifrar
-/*const descifrarFrase= (fraseInicial,desplazamiento)=>{
+const descifrarFrase= (fraseInicial,desplazamiento)=>{
 	const fraseMayuscula=fraseInicial.toUpperCase();
 	let fraseANCIIDesplazado=[];
 	let fraseANCII=[];
@@ -45,4 +49,4 @@ const btnCifrar = document.getElementById('btn-cifrar');
 
 	}
 	return fraseDescifrada;
-}*/
+}

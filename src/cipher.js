@@ -1,17 +1,5 @@
 window.cipher = {
-  // ... 
 
-/* Objeto junto a la declaración del método
-MIAPLICACION.event = {
-  addListener: function(el, type, fn){
-    // código de relleno
-  },
-  removeListener: function(el, type, fn){
-    // código de relleno
-  },
-  getEvent: function(e) {
-    // código de relleno
-  }*/
   encode:	function cifrarFrase(offset,string){
 		const fraseMayuscula=string.toUpperCase();
 		let fraseANCIIDesplazado=[];
@@ -38,9 +26,11 @@ MIAPLICACION.event = {
          if(fraseANCII[i]!==32)fraseANCIIDesplazado[i]=(((fraseANCII[i]-90)-offset)%26)+90;
          else if(fraseANCII[i]===32)fraseANCIIDesplazado[i]=fraseANCII[i];
       }
+
       fraseDescifrada+=String.fromCharCode(fraseANCIIDesplazado[i]); 
   
     }
     return fraseDescifrada;
   }
 };
+export default window.cipher;
