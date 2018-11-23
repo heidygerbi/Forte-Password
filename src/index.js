@@ -5,19 +5,19 @@ const btnCifrar = document.getElementById('btn-cifrar');
 	const string= document.getElementById('frase').value;
 	const offset=parseInt(document.getElementById('desplazamiento').value);
 	//alert(cifrarFrase(string,offset));
-//	resultado.innerHTML = cipher.encode(offset,string);
-	resultado.innerHTML = cifrarFrase(string,offset);
+	resultado.innerHTML = cipher.encode(offset,string);
+	//resultado.innerHTML = cifrarFrase(string,offset);
 });
 
  const btnDescifrar = document.getElementById('btn-descifrar');
  btnDescifrar.addEventListener('click', () => {
 	const string= document.getElementById('frase').value;
 	const offset=parseInt(document.getElementById('desplazamiento').value);
-//	resultado.innerHTML = cipher.decode(offset,string);
-	resultado.innerHTML=descifrarFrase(string,offset);
+	resultado.innerHTML = cipher.decode(offset,string);
+//	resultado.innerHTML=descifrarFrase(string,offset);
 }); 
 
-//funcion para cifrar
+/*//funcion para cifrar
 	const cifrarFrase= (fraseInicial,desplazamiento)=>{
 		const fraseMayuscula=fraseInicial.toUpperCase();
 		let fraseANCIIDesplazado=[];
@@ -49,4 +49,4 @@ const descifrarFrase= (fraseInicial,desplazamiento)=>{
 
 	}
 	return fraseDescifrada;
-}
+}*/
