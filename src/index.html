@@ -1,49 +1,9 @@
-<!--<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Caesar Cipher</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div id="root">
-      <div id="bienvenida">
-      	<p>Creación de claves bancarias Inteligentes</p>
-		<p>"Fuertes y seguras con datos fáciles de recordar"</p>
-      </div>
-      <div id="funcionalidad">
-      	<form>
-					<div>
-						<label>Desplazamiento:</label>
-						<input type="number" id="desplazamiento">
-					</div>
-					<div>
-						<label>Ingrese clave a cifrar o descifrar:</label>
-						<textarea id="frase"></textarea>
-					</div>
-					<div>
-						<button type="button" id="btn-cifrar">Cifrar</button>
-						<button type="button" id="btn-descifrar">Descifrar</button>
-					</div>
-      	</form>
-      </div>
-      <div id="resul">
-				<textarea id="resultado"></textarea>
-      </div>
-    </div>
-    <script src="cipher.js"></script>
-    <script src="index.js"></script>
-  </body>
-</html>
--->
 <!DOCTYPE html>
  <html lang="es">
  <head>
 <title>Contraseñas Seguros</title>
 <meta charset="utf-8"/>
 <link rel="stylesheet" href="style.css" />
-<!--<link rel="shortcut icon" href="/favicon.ico" />-->
-<!--<link rel="alternate" title="Pozolería RSS" type="application/rss+xml" href="/feed.rss" />-->
 </head>
 <body>
     <header>
@@ -51,25 +11,24 @@
         <p>"Fuertes y seguras con datos fáciles de recordar"</p>
     </header>
     <section id="center">
-        <form>
-            <fieldset><!--Poner id-->
-                <!--<legend>Cifrado/Descifrdo</legend>-->
-                <label>Desplazamiento:</label><!--cambiar nombre por clave-->
-                <input type="number" id="desplazamiento" min="1" max="25" value="1">
-                <label>Ingrese clave a cifrar o descifrar:</label><!--Explicación de como funciona-->
-                <textarea id="frase"></textarea>
-                <button type="button" id="btn-cifrar">Cifrar</button>
-                <button type="button" id="btn-descifrar">Descifrar</button>
-                <div id="resul">
-                    <textarea id="resultado"></textarea>
-                </div>    
+        <form id="frm">
+            <fieldset>
+                <legend>Cipher</legend>
+                <section id="nivel">
+                    <label>Nivel:</label>
+                    <input type="number" id="desplazamiento" min="1" max="25" value="1">
+                </section>
+                <section id="contenedor-frase">
+                    <label>Ingrese clave a cifrar o descifrar:</label><!--Explicación de como funciona-->
+                    <textarea id="frase"></textarea>
+                </section>
+                <section id="botones">
+                    <button type="button" id="btn-cifrar">Cifrar</button>
+                    <button type="button" id="btn-descifrar">Descifrar</button>
+                </section>
             </fieldset>
         </form>
     </section>
-<!--    <aside>
-       <h3>Titulo de contenido</h3>
-           <p>contenido</p>
-    </aside>-->
     <footer>
         Creado por Heidy Gerbi
     </footer>

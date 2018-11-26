@@ -1,5 +1,5 @@
 body{
-    background-image: url(../img/nicole-honeywill-1163684-unsplash.jpg);
+    background-image: url(../img/binary-system-63526_1280.jpg);
     /*background-color: darkgrey;*/
     background-size: 100vw 100vh;
     background-attachment: fixed;
@@ -7,20 +7,23 @@ body{
     font-size: 30px;
     margin-bottom: 20px;
 }
-fieldset{
+form{
 /*    background-image: url(img/Cifrado-de-datos-1.png);
     background-size: 500px 600px;*/
     width: 500px;
-    height: 600px;
+    height: 400px;
     margin: auto; 
-    background:rgba(194, 187, 187, 0.698);
+    background:rgba(194, 187, 187, 0.767);
     padding: 10px 20px;
     box-sizing: border-box;
     margin-top: 20px;
-    border-radius: 7px:
+    border-radius: 8%;
+}
+fieldset{
+    border-radius: 8%;
 }
 h1{
-    color:rgb(87, 13, 13);
+    color:rgba(46, 13, 236, 0.911);
     text-align: center;
     margin: 0;
     font-size: 30px;
@@ -50,10 +53,15 @@ textarea{
     max-width: 100%;
     min-height: 100px;
 }
+#botones{
+    text-align: center;
+    margin: 0;
+}
 button{
     background:#31384A;
     color: #fff;
     padding: 20px;
+    margin: inherit;
 }
 button:hover{
     cursor: pointer;

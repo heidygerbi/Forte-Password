@@ -1,11 +1,11 @@
 window.cipher = {
 
   encode:	function cifrarFrase(offset,string){
-		const fraseMayuscula=string.toUpperCase();
-		let fraseANCIIDesplazado=[];
+    const fraseMayuscula=string.toUpperCase();
+    let fraseANCIIDesplazado=[];
 		let fraseANCII=[];
 		let fraseCifrada="";
-		for (let i=0; i<fraseMayuscula.length; i++) {
+ 		for (let i=0; i<fraseMayuscula.length; i++) {
 			fraseANCII[i]=parseInt(fraseMayuscula.charCodeAt(i));//transforma en ANCII
 			if((fraseANCII[i]>=65 && fraseANCII[i]<=90)||fraseANCII[i]===32){
 				if(fraseANCII[i]!==32)fraseANCIIDesplazado[i]=(((fraseANCII[i]-65)+offset)%26)+65;
@@ -33,4 +33,3 @@ window.cipher = {
     return fraseDescifrada;
   }
 };
-export default window.cipher;
