@@ -7,19 +7,43 @@
 </head>
 <body>
     <header>
-        <h1>Creación de Claves Bancarias Inteligentes</h1>
-        <p>"Fuertes y seguras con datos fáciles de recordar"</p>
+        <!--<h1>Creación de Claves Bancarias Inteligentes</h1>
+        <p>"Fuertes y seguras con datos fáciles de recordar"</p>-->
     </header>
     <section id="center">
         <form id="frm">
             <fieldset>
-                <legend>Cipher</legend>
-                <section id="nivel">
-                    <label>Nivel:</label>
-                    <input type="number" id="desplazamiento" min="1" max="25" value="1">
+                <legend>Forte Password <!--<img src="../img/segure.jpg">--></legend>
+                <section id="activar-conf">
+                    <img id="img-conf" src="../img/conf.png" title="Configuración">
                 </section>
+                <section id="nivel">
+                    <label>Offset:</label>
+                    <input type="number" id="desplazamiento" min="1" max="25" value="1" required>
+                </section>
+                <section id="seleccion-esp">
+                    <label>Cambiar espacio por:</label>
+                    <select>
+                        <option value="comilla">"</option>
+                        <option value="punto">·</option>
+                        <option value="dolar">$</option>
+                        <option value="ampe">&</option>
+                    </select>
+                </section>
+                <section id="seleccion-slash">
+                        <label>Cambiar slash por:</label>
+                        <select>
+                            <option value="numeral">#</option>
+                            <option value="piso">_</option>
+                            <option value="puntoComa">;</option>
+                            <option value="dosPuntos">:</option>
+                        </select>
+                </section>
+                <section id="boton-conf">
+                        <button type="button" id="btn-conf">Listo</button>
+                    </section>
                 <section id="contenedor-frase">
-                    <label>Ingrese clave a cifrar o descifrar:</label><!--Explicación de como funciona-->
+                    <label for="frase" id="tag-frase">Ingrese una palabra, slash o espacio y un número:</label><!--Explicación de como funciona-->
                     <textarea id="frase"></textarea>
                 </section>
                 <section id="botones">
@@ -30,7 +54,7 @@
         </form>
     </section>
     <footer>
-        Creado por Heidy Gerbi
+        Creado por: Heidy Gerbi - &copy;CopyLetf - 2018
     </footer>
     <script src="index.js"></script>
     <script src="cipher.js"></script>
