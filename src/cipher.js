@@ -1,35 +1,64 @@
 window.cipher = {
-
-  encode:	function cifrarFrase(offset,string){
-    const fraseMayuscula=string.toUpperCase();
+  encode:	function cifrarFrase(offset,string,esp,slash){
+    const fraseMayuscula=string;//.toUpperCase();
     let fraseANCIIDesplazado=[];
 		let fraseANCII=[];
-		let fraseCifrada="";
+    let fraseCifrada="";
+    let clave="";
+    const sustitutoEsp=parseInt(esp);
+    const sustitutoSlash=parseInt(slash);
  		for (let i=0; i<fraseMayuscula.length; i++) {
-			fraseANCII[i]=parseInt(fraseMayuscula.charCodeAt(i));//transforma en ANCII
-			if((fraseANCII[i]>=65 && fraseANCII[i]<=90)||fraseANCII[i]===32){
-				if(fraseANCII[i]!==32)fraseANCIIDesplazado[i]=(((fraseANCII[i]-65)+offset)%26)+65;
-				else if(fraseANCII[i]===32)fraseANCIIDesplazado[i]=fraseANCII[i];
-			}
-			fraseCifrada+=String.fromCharCode(fraseANCIIDesplazado[i]); 
-		}
-		return fraseCifrada;
-  },
-  decode: function descifrarFrase(offset,string){
-    const fraseMayuscula=string.toUpperCase();
-    let fraseANCIIDesplazado=[];
-    let fraseANCII=[];
-    let fraseDescifrada="";
-    for (let i=0; i<fraseMayuscula.length; i++) {
       fraseANCII[i]=parseInt(fraseMayuscula.charCodeAt(i));//transforma en ANCII
-       if((fraseANCII[i]>=65 && fraseANCII[i]<=90)||fraseANCII[i]===32){
-         if(fraseANCII[i]!==32)fraseANCIIDesplazado[i]=(((fraseANCII[i]-90)-offset)%26)+90;
-         else if(fraseANCII[i]===32)fraseANCIIDesplazado[i]=fraseANCII[i];
+			if(fraseANCII[i]>=65 && fraseANCII[i]<=90){
+				fraseANCIIDesplazado[i]=(((fraseANCII[i]-65)+offset)%26)+65;
       }
-
+      if(fraseANCII[i]===32){
+        fraseANCIIDesplazado[i]=sustitutoEsp;
+      }
+      if(fraseANCII[i]===47){
+        fraseANCIIDesplazado[i]=sustitutoSlash;
+      }
+			if(fraseANCII[i]>=48 && fraseANCII[i]<=57){
+				fraseANCIIDesplazado[i]=(((fraseANCII[i]-48)+offset)%11)+57;
+      }      
+      fraseCifrada+=String.fromCharCode(fraseANCIIDesplazado[i]); 
+      if(i%2===0){
+  		 console.log(clave+=fraseCifrada[i].toUpperCase()); 
+      }else if(i%2!==0){
+        console.log(clave+=fraseCifrada[i].toLowerCase()); 
+      }
+     }
+		return clave;
+  },
+  decode:function descifrarFrase(offset,string,esp,slash){
+    const fraseMayuscula=string;//.toUpperCase();
+    let fraseANCIIDesplazado=[];
+		let fraseANCII=[];
+    let fraseDescifrada="";
+    let noClave="";
+    const sustitutoEsp=parseInt(esp);
+    const sustitutoSlash=parseInt(slash);
+ 		for (let i=0; i<fraseMayuscula.length; i++) {
+      fraseANCII[i]=parseInt(fraseMayuscula.charCodeAt(i));//transforma en ANCII
+			if(fraseANCII[i]>=65 && fraseANCII[i]<=90){
+				fraseANCIIDesplazado[i]=(((fraseANCII[i]-90)-offset)%26)+90;
+      }
+      if(fraseANCII[i]===34 || fraseANCII[i]===46 || fraseANCII[i]===36 || fraseANCII[i]===38){
+        fraseANCIIDesplazado[i]=32;
+      }
+      if(fraseANCII[i]===35 || fraseANCII[i]===95 || fraseANCII[i]===59 || fraseANCII[i]===58){
+        fraseANCIIDesplazado[i]=47;
+      }
+			if(fraseANCII[i]>=48 && fraseANCII[i]<=57){
+				fraseANCIIDesplazado[i]=(((fraseANCII[i]-48)-offset)%11)+57;
+      }      
       fraseDescifrada+=String.fromCharCode(fraseANCIIDesplazado[i]); 
-  
-    }
-    return fraseDescifrada;
+      if(i%2===0){
+  		 console.log(noClave+=fraseDescifrada[i].toUpperCase()); 
+      }else if(i%2!==0){
+        console.log(noClave+=fraseescifrada[i].toLowerCase()); 
+      }
+     }
+		return noClave; 
   }
 };

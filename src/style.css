@@ -108,8 +108,8 @@ footer{
     width:100%;
     height:200px;
 }
-@media (max-width:480px){
-    form{
+@media (max-width:400px){
+    form,fieldset{
         width:100%
     }
 }

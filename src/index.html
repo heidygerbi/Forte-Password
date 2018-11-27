@@ -3,6 +3,7 @@
  <head>
 <title>Contraseñas Seguras</title>
 <meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -22,21 +23,21 @@
                     <input type="number" id="desplazamiento" min="1" max="25" value="1" required>
                 </section>
                 <section id="seleccion-esp">
-                    <label>Cambiar espacio por:</label>
-                    <select>
-                        <option value="comilla">"</option>
-                        <option value="punto">·</option>
-                        <option value="dolar">$</option>
-                        <option value="ampe">&</option>
+                    <label for="esp">Cambiar espacio por:</label>
+                    <select id="esp">
+                        <option value="34">"</option>
+                        <option value="46">·</option>
+                        <option value="36">$</option>
+                        <option value="38">&</option>
                     </select>
                 </section>
                 <section id="seleccion-slash">
-                        <label>Cambiar slash por:</label>
-                        <select>
-                            <option value="numeral">#</option>
-                            <option value="piso">_</option>
-                            <option value="puntoComa">;</option>
-                            <option value="dosPuntos">:</option>
+                        <label for="slash">Cambiar slash por:</label>
+                        <select id="slash">
+                            <option value="35">#</option>
+                            <option value="95">_</option>
+                            <option value="59">;</option>
+                            <option value="58">:</option>
                         </select>
                 </section>
                 <section id="boton-conf">
