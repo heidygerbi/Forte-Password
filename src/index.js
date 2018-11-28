@@ -23,7 +23,7 @@ imgConf.addEventListener('click', () => {
 	document.getElementById("boton-conf").style.display="block";
 	document.getElementById("contenedor-frase").style.display="none";
 	document.getElementById("botones").style.display="none";
-	document.getElementById("img-conf").style.display="none";
+	document.getElementById("img-conf").style.display="block";
 });
 const btnConf = document.getElementById('btn-conf');
 btnConf.addEventListener('click', () => {
