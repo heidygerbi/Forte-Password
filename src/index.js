@@ -4,7 +4,7 @@ btnCifrar.addEventListener('click', () => {
 	const offset=parseInt(document.getElementById('desplazamiento').value);
 	const esp=parseInt(document.getElementById('esp').value);
 	const slash=parseInt(document.getElementById('slash').value);	
-	frase.value=cipher.encode(offset,string,esp,slash);
+	string.value=cipher.encode(offset,string,esp,slash);
 });
 
 const btnDescifrar = document.getElementById('btn-descifrar');
@@ -13,7 +13,7 @@ btnDescifrar.addEventListener('click', () => {
 	const offset=parseInt(document.getElementById('desplazamiento').value);
 	const esp=parseInt(document.getElementById('esp').value);
 	const slash=parseInt(document.getElementById('slash').value);	
-	frase.value=cipher.decode(offset,string,esp,slash);
+	string.value=cipher.decode(offset,string,esp,slash);
 });
 const imgConf = document.getElementById('img-conf');
 imgConf.addEventListener('click', () => {
@@ -36,5 +36,5 @@ btnConf.addEventListener('click', () => {
 });
 const fraseMayuscula = document.getElementById('frase');
 fraseMayuscula.addEventListener('blur', () => {
-	frase.value=frase.value.toUpperCase();
+	fraseMayuscula.value=fraseMayuscula.value.toUpperCase();
 });

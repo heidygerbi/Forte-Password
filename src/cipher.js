@@ -7,7 +7,7 @@ window.cipher = {
     let clave="";
     const sustitutoEsp=parseInt(esp);
     const sustitutoSlash=parseInt(slash);
- 		for (let i=0; i<fraseMayuscula.length; i++) {
+	for(let i=0; i<fraseMayuscula.length; i++) {
       fraseANCII[i]=parseInt(fraseMayuscula.charCodeAt(i));//transforma en ANCII
 			if(fraseANCII[i]>=65 && fraseANCII[i]<=90){
 				fraseANCIIDesplazado[i]=(((fraseANCII[i]-65)+offset)%26)+65;
@@ -23,20 +23,20 @@ window.cipher = {
       }      
       fraseCifrada+=String.fromCharCode(fraseANCIIDesplazado[i]); 
       if(i%2===0){
-  		 console.log(clave+=fraseCifrada[i].toUpperCase()); 
+      clave+=fraseCifrada[i].toUpperCase(); 
       }else if(i%2!==0){
-        console.log(clave+=fraseCifrada[i].toLowerCase()); 
+        clave+=fraseCifrada[i].toUpperCase();//toLowerCase(); 
       }
-     }
+  }
 		return clave;
   },
-  decode:function descifrarFrase(offset,string,esp,slash){
+  decode:function descifrarFrase(offset,string){
     const fraseMayuscula=string.toUpperCase();
     let fraseANCIIDesplazado=[];
 		let fraseANCII=[];
     let fraseDescifrada="";
     let noClave="";
- 		for (let i=0; i<fraseMayuscula.length; i++) {
+  for (let i=0; i<fraseMayuscula.length; i++) {
       fraseANCII[i]=parseInt(fraseMayuscula.charCodeAt(i));//transforma en ANCII
 			if(fraseANCII[i]>=65 && fraseANCII[i]<=90){
 				fraseANCIIDesplazado[i]=(((fraseANCII[i]-90)-offset)%26)+90;
@@ -48,14 +48,13 @@ window.cipher = {
         fraseANCIIDesplazado[i]=47;
       }
 			if(fraseANCII[i]>=48 && fraseANCII[i]<=57){
-        let a=(fraseANCII[i]-57);
         fraseANCIIDesplazado[i]=(((fraseANCII[i]-57)-offset)%10)+57;
       }      
       fraseDescifrada+=String.fromCharCode(fraseANCIIDesplazado[i]); 
       if(i%2===0){
-  		 console.log(noClave+=fraseDescifrada[i].toUpperCase()); 
+        noClave+=fraseDescifrada[i].toUpperCase(); 
       }else if(i%2!==0){
-        console.log(noClave+=fraseDescifrada[i].toLowerCase()); 
+       noClave+=fraseDescifrada[i].toUpperCase();//toLowerCase(); 
       }
      }
 		return noClave; 
