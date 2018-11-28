@@ -42,6 +42,9 @@ label{
 #boton-conf{
     display: none;
 }
+#dif{
+    display: none;
+}
 #activar-conf{
     text-align: right;
     margin: 0;
