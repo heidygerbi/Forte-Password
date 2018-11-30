@@ -22,23 +22,19 @@ En esta ventana debe seleccionar:
 -	 Cambiar slash por: se muestran las opciones para cambiar el slash por un carácter especial.
 -	Y finalmente, pregunta si: ¿Desea intercalar mayúsculas y minúsculas? Esta pregunta es con el fin de crear contraseñas más seguras y queda a juicio del usuario.
 
-![Forte Password]
-(https://raw.githubusercontent.com/heidygerbi/lim-2018-11-bc-core-am-cipher/2a5b01f4ec1ff5b23791df66672c0cf866b34596/img/cipher1.png)
+![Forte Password](https://raw.githubusercontent.com/heidygerbi/lim-2018-11-bc-core-am-cipher/2a5b01f4ec1ff5b23791df66672c0cf866b34596/img/cipher1.png)
 
 Una vez realizadas las configuraciones deseadas, se regresa a la pantalla inicial donde hay un espacio para escribir la palabra deseada (se permite el uso de números enteros del 0 al 9, espacios y slashs)
 
-![Forte Password]
-(https://raw.githubusercontent.com/heidygerbi/lim-2018-11-bc-core-am-cipher/2a5b01f4ec1ff5b23791df66672c0cf866b34596/img/cipher2.png)
+![Forte Password](https://raw.githubusercontent.com/heidygerbi/lim-2018-11-bc-core-am-cipher/2a5b01f4ec1ff5b23791df66672c0cf866b34596/img/cipher2.png)
 
 Luego de ingresar la palabra deseada, se presiona el botón “Generar Clave”
 
-![Forte Password]
-(https://raw.githubusercontent.com/heidygerbi/lim-2018-11-bc-core-am-cipher/2a5b01f4ec1ff5b23791df66672c0cf866b34596/img/cipher3.png)
+![Forte Password](https://raw.githubusercontent.com/heidygerbi/lim-2018-11-bc-core-am-cipher/2a5b01f4ec1ff5b23791df66672c0cf866b34596/img/cipher3.png)
 
 Se muestra el resultado en el mismo espacio donde se inserto la palabra inicial, si desea ver su palabra ingresada, debe pulsar el botón “Ver Original”.
 
-![Forte Password]
-(https://raw.githubusercontent.com/heidygerbi/lim-2018-11-bc-core-am-cipher/2a5b01f4ec1ff5b23791df66672c0cf866b34596/img/cipher4.png)
+![Forte Password](https://raw.githubusercontent.com/heidygerbi/lim-2018-11-bc-core-am-cipher/2a5b01f4ec1ff5b23791df66672c0cf866b34596/img/cipher4.png)
 
 Tome en consideración recordar la configuración utilizada para poder retornar de manera segura a su clave.
 
