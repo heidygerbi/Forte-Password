@@ -1,5 +1,5 @@
 window.cipher = {
-  encode:	function cifrarFrase(offset,string,esp,slash){
+  encode:	function cifrarFrase(offset,string,esp,slash,dificultad){
     const fraseMayuscula=string.toUpperCase();
     let fraseANCIIDesplazado=[];
 		let fraseANCII=[];
@@ -22,15 +22,19 @@ window.cipher = {
 				fraseANCIIDesplazado[i]=(((fraseANCII[i]-48)+offset)%10)+48;
       }      
       fraseCifrada+=String.fromCharCode(fraseANCIIDesplazado[i]); 
-      if(i%2===0){
-      clave+=fraseCifrada[i].toUpperCase(); 
-      }else if(i%2!==0){
-        clave+=fraseCifrada[i].toUpperCase();//toLowerCase(); 
-      }
-  }
+      if(dificultad==="si"){
+        if(i%2===0){
+        clave+=fraseCifrada[i].toUpperCase(); 
+        }else if(i%2!==0){
+          clave+=fraseCifrada[i].toLowerCase(); 
+        }
+      }else{
+        clave+=fraseCifrada[i];
+      }  
+    }
 		return clave;
   },
-  decode:function descifrarFrase(offset,string){
+  decode:function descifrarFrase(offset,string,dificultad){
     const fraseMayuscula=string.toUpperCase();
     let fraseANCIIDesplazado=[];
 		let fraseANCII=[];
@@ -51,10 +55,14 @@ window.cipher = {
         fraseANCIIDesplazado[i]=(((fraseANCII[i]-57)-offset)%10)+57;
       }      
       fraseDescifrada+=String.fromCharCode(fraseANCIIDesplazado[i]); 
-      if(i%2===0){
+      if(dificultad==="si"){
+        if(i%2===0){
         noClave+=fraseDescifrada[i].toUpperCase(); 
-      }else if(i%2!==0){
-       noClave+=fraseDescifrada[i].toUpperCase();//toLowerCase(); 
+        }else if(i%2!==0){
+          noClave+=fraseDescifrada[i].toLowerCase(); 
+        }
+      }else{
+        noClave+=fraseDescifrada[i];
       }
      }
 		return noClave; 
