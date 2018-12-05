@@ -1,0 +1,89 @@
+*{
+    box-sizing: border-box;/*evita que tome en cuenta el borde que se le aplica*/
+    margin: 0;/*MARGEN EXTERNO*/
+    padding: 0;/*MARGEN INTERNO*/
+    list-style: none;
+    text-decoration: none;
+    font-family: sans-serif;
+}
+/* #colum-izq, #colum-der{
+    background-color: brown;
+} */
+/* #center{
+    background-color: blue;
+} */
+.container{
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;/*margin:auto*/
+    position: relative;
+    height: 100%;
+}
+.fila{
+    width: 100%;
+    margin: auto;/*margin:auto*/
+    position: relative;
+    height: 100%;
+}
+/* .row:before, .row:after{
+    content: "";
+    display: table;
+    clear: both;
+} */
+[class*="col-"]{
+    float: left;
+    min-height: 7x;
+    /*gutters*/
+    padding: 12px;
+}
+/*(100/12)*num-col */
+.col-1{
+    width: 8.33333333%
+}
+.col-2{
+    width: 16.666667%
+}
+.col-3{
+    width: 25%
+}
+.col-4{
+    width: 33.33333333%
+}
+.col-5{
+    width: 41.666667%
+}
+.col-6{
+    width: 50%
+}
+.col-7{
+    width: 58.333333%
+}
+.col-8{
+    width: 66.666667%
+}
+.col-9{
+    width: 75%
+}
+.col-10{
+    width: 83.333333%
+}
+.col-11{
+    width: 91.666667%
+}
+.col-12{
+    width: 100%
+}
+@media all (max-width:450px){
+    [class*="col-"]{
+        width: 100%;
+    }
+}
+
+/*IntelliSense for CSS, SCSS class names in HTML and Slim
+Sublime Text Keymap and Settings Importer
+Sublime Text Keymap and Settings Importer
+
+*/
+
+
+

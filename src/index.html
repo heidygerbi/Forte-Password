@@ -7,56 +7,75 @@
 <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <header>
-        <!--<h1>Creación de Claves Bancarias Inteligentes</h1>
-        <p>"Fuertes y seguras con datos fáciles de recordar"</p>-->
-    </header>
-    <section id="center">
-        <form id="frm">
-            <fieldset>
-                <legend>Forte Password <!--<img src="../img/segure.jpg">--></legend>
-                <section id="activar-conf">
-                    <img id="img-conf" src="../img/conf.png" title="Configuración">
-                </section>
-                <section id="nivel">
-                    <label>Offset:</label>
-                    <input type="number" id="desplazamiento" min="1" max="25" value="1" required>
-                </section>
-                <section id="seleccion-esp">
-                    <label for="esp">Cambiar espacio por:</label>
-                    <select id="esp">
-                        <option value="34">"</option>
-                        <option value="46">·</option>
-                        <option value="36">$</option>
-                        <option value="38">&</option>
-                    </select>
-                </section>
-                <section id="seleccion-slash">
-                        <label for="slash">Cambiar slash por:</label>
-                        <select id="slash">
-                            <option value="35">#</option>
-                            <option value="95">_</option>
-                            <option value="59">;</option>
-                            <option value="58">:</option>
-                        </select>
-                </section>
-                <section id="boton-conf">
-                        <button type="button" id="btn-conf">Listo</button>
-                    </section>
-                <section id="contenedor-frase">
-                    <label for="frase" id="tag-frase">Ingrese una palabra, slash o espacio y un número:</label><!--Explicación de como funciona-->
-                    <textarea id="frase"></textarea>
-                </section>
-                <section id="botones">
-                    <button type="button" id="btn-cifrar">Generar Clave</button>
-                    <button type="button" id="btn-descifrar">Ver Original</button>
-                </section>
-            </fieldset>
-        </form>
-    </section>
-    <footer>
-        Creado por: Heidy Gerbi - &copy;CopyLetf - 2018
-    </footer>
+
+        <div class="container">
+                <div class="fila">
+                    <div class="col-3">
+
+                    </div>
+                </div>
+                <div class="fila">
+                    <div class="col-6">
+                            <section id="center">
+                                    <form id="frm">
+                                        <fieldset>
+                                            <legend>Forte Password <!--<img src="../img/segure.jpg">--></legend>
+                                            <div id="activar-conf">
+                                                <img id="img-conf" src="../img/conf.png" title="Configuración">
+                                            </div>
+                                            <div id="nivel">
+                                                <label>Offset:</label>
+                                                <input type="number" id="desplazamiento" min="1" max="25" value="1" required>
+                                            </div>
+                                            <div id="seleccion-esp">
+                                                <label for="esp">Cambiar espacio por:</label>
+                                                <select id="esp">
+                                                    <option value="34">"</option>
+                                                    <option value="46">·</option>
+                                                    <option value="36">$</option>
+                                                    <option value="38">&</option>
+                                                </select>
+                                            </div>
+                                            <div id="seleccion-slash">
+                                                    <label for="slash">Cambiar slash por:</label>
+                                                    <select id="slash">
+                                                        <option value="35">#</option>
+                                                        <option value="95">_</option>
+                                                        <option value="59">;</option>
+                                                        <option value="58">:</option>
+                                                    </select>
+                                            </div>
+                                            <div id="boton-conf">
+                                                    <button type="button" id="btn-conf">Listo</button>
+                                                </div>
+                                            <div id="contenedor-frase">
+                                                <label for="frase" id="tag-frase">Ingrese una palabra, slash o espacio y un número:</label><!--Explicación de como funciona-->
+                                                <textarea id="frase"></textarea>
+                                            </div>
+                                            <div id="botones">
+                                                <button type="button" id="btn-cifrar">Generar Clave</button>
+                                                <button type="button" id="btn-descifrar">Ver Original</button>
+                                            </div>
+                                        </fieldset>
+                                    </form>
+                                </section>
+                    </div>
+                </div>
+            </div> 
+            <div class="fila">
+                <div class="col-3">
+                </div>
+            </div>
+            <div class="container">
+                <div class="fila">
+                    <div class="col-12">
+                        <footer>
+                            Creado por: Heidy Gerbi - &copy;CopyLetf - 2018
+                        </footer>
+                    </div>
+                </div>
+            </div>
+
     <script src="index.js"></script>
     <script src="cipher.js"></script>
   </body>

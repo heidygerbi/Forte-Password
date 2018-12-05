@@ -1,10 +1,11 @@
 const btnCifrar = document.getElementById('btn-cifrar');
 btnCifrar.addEventListener('click', () => {
-	const string= document.getElementById('frase').value;
+	let string= document.getElementById('frase').value;
 	const offset=parseInt(document.getElementById('desplazamiento').value);
 	const esp=parseInt(document.getElementById('esp').value);
-	const slash=parseInt(document.getElementById('slash').value);	
-	string.value=cipher.encode(offset,string,esp,slash);
+	const slash=parseInt(document.getElementById('slash').value);
+	const imp= string.value=cipher.encode(offset,string,esp,slash);
+	console.log("este es el resultado "+imp);
 });
 
 const btnDescifrar = document.getElementById('btn-descifrar');
