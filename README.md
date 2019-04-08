@@ -1,6 +1,6 @@
 # Forte Password
 
-[Forte Password](https://heidygerbi.github.io/lim-2018-11-bc-core-am-cipher/src), es un software diseñado para adultos que desean una contraseña segura, para ello e le da la opción al usuario de intercalar mayúsculas y minúsculas en la clave generada (opcional), hace uso de números  (como fecha de nacimiento y en la configuración podrá seleccionar la sustitución de espacios  y slashs por el carácter especial seleccionado, así como el offset (desplazamiento) deseado.
+[Forte Password](https://heidygerbi.github.io/lim-2018-11-bc-core-am-cipher/src), es un software diseñado para adultos que desean una contraseña segura, para ello se le da la opción al usuario de intercalar mayúsculas y minúsculas en la clave generada (opcional), hace uso de números  (como fecha de nacimiento y en la configuración podrá seleccionar la sustitución de espacios  y slashs por el carácter especial seleccionado, así como el offset (desplazamiento) deseado.
 
 ## Características Generales
 
